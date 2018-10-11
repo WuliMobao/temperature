@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Temperature</title>
+    <!-- 引入 echarts.js -->
+    <script src="echarts.js"></script>
+</head>
+<body>
+	<style>
+	body {
+		height:100%;
+		width: 100%;
+		margin: 0;
+		}
+	</style>
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+	<div id="main" style="width:357px;height:346px;background-color:#F8F8F8;"></div>
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'),);
+
+        // 指定图表的配置项和数据
+
+option = {
+    color: ['#4ea397', '#22c3aa', '#7bd9a5'],
+    title: {
+        text: '体温变化趋势（平均值）'
+    },
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+            type: 'cross',
+            crossStyle: {
+                color: '#999'
+            }
+        }
+    },
+    grid: {
+        left: '5%',
+        right: '3%',
+        top: '16%',
+        bottom: '7%',
+        containLabel: true
+    },
+    xAxis: [
+        {
+            type: 'category',
+            data: ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'],
+            axisPointer: {
+                type: 'shadow'
+            }
+        }
+    ],
+    yAxis: {
+        type: 'value',
+        name: '体温（℃）',
+        min: 34.0,
+        max: 40.0,
+        interval: 1.0
+    },
+    series: [
+        {
+            name:'体温',
+            type:'line',
+            data:[36.9, 37.1, 38.2, 38.5, 36.6, 36.6, 35.5, 36, 38.3, 36.9, 38, 36.5]
+        }
+    ]
+};
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+</body>
+</html>
