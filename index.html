@@ -95,7 +95,26 @@ option = {
         {
             name:'体温',
             type:'line',
-            data:[36.9, 37.1, 38.2, 38.5, 36.6, 36.6, 35.5, 36, 38.3, 36.9, 38, 36.5]
+            data:[36.9, 37.1, 38.2, 38.5, 36.6, 36.6, 35.5, 36, 38.3, 36.9, 38, 36.5],
+			markArea: {
+                itemStyle: {
+                    color: 'rgb(225, 0, 0,0.4)'
+                },
+                label: {
+                    color: '#FFF',
+                    fontWeight: 'bolder',
+					fontSize: '12',
+                    position: 'insideLeft',
+                },
+                data: [ [{
+                    name: '标\n准\n体\n温\n范\n围',
+                    yAxis: '36.0'
+                }, {
+                    yAxis: '37.6'
+                }], 
+                ],
+				silent: true
+            }
         }
     ]
 };
